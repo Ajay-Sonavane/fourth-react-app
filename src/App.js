@@ -11,13 +11,15 @@ function App() {
 function ListDemo() {
   let data = "Hello Universe";
   let list = ["delhi", "calcutta", "chennai"];
-  // for (let i = 0; i < 10; i++) {
-  //   list.push("hello Universe");
-  // }
+  //
+
   return (
     <>
       <h1>{data}</h1>
-      {list.map((item) => item)}
+      {/* {list.map((item) => item)}  version 1*/}
+      {list.map((item) => (
+        <h1>Hello{item}</h1>
+      ))}
     </>
   );
 }
