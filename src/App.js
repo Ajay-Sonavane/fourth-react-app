@@ -2,16 +2,27 @@ function App() {
   return (
     <>
       <h1>Props demo </h1>
-      <MessegeDemo username="Ajay" />
+      {/* calling the messege */}
+      <MessegeDemo name="Ajay" email="Ajay@gmail.com" />
     </>
   );
 }
 
-function MessegeDemo(Props) {
+function MessegeDemo({ name, email }) {
   return (
     <>
-      <h1>Hello {Props.username}</h1>
+      <h1>
+        Hello {name} {email}
+      </h1>
     </>
   );
 }
+
+// function MessegeDemo(Props) {
+//   return (
+//     <>
+//       <h1>Hello {(Props.name, Props.email)}</h1>
+//     </>
+//   );
+// }
 export default App;
