@@ -10,17 +10,15 @@ function App() {
 }
 
 function ListDemo() {
-  // let list = ["delhi"]
-  // C1: Stateful Variable
   let [list, setList] = useState(["delhi"]);
 
   // C2: Acton Member Funcn
   let addItemAction = () => {
-    // why didn u use push method, push method update the same object
-    // setter method requires immutable object.
-    // We have to pass new list.
-    let newList = [...list, "mumbai"];
-    console.log(newList);
+    let inputElement = document.querySelector("#id1");
+    let inputValue = inputElement.value;
+
+    let newList = [...list, inputValue];
+    inputElement.value = "";
 
     // DOM :: TRIGGER DOM
     setList(newList);
@@ -29,11 +27,12 @@ function ListDemo() {
   return (
     <>
       {/** C3: Event Binding */}
-      <input type="button" value="Add New Item" onClick={addItemAction} />
+      <input type="text" id="id1" placeholder="Whatapp here..." />
+      <input type="button" value="Add Messege" onClick={addItemAction} />
 
       {/** C4: List */}
       {list.map((item) => (
-        <h1>Hello {item}</h1>
+        <h1> {item}</h1>
       ))}
     </>
   );
