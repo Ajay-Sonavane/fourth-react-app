@@ -2,15 +2,15 @@ function App() {
   return (
     <>
       <h1>Props demo </h1>
-      <MessegeDemo />
+      <MessegeDemo username="Ajay" />
     </>
   );
 }
 
-function MessegeDemo() {
+function MessegeDemo(Props) {
   return (
     <>
-      <h1>Hello World</h1>
+      <h1>Hello {Props.username}</h1>
     </>
   );
 }
