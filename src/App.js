@@ -9,26 +9,28 @@ function App() {
 }
 
 function ListDemo() {
-  let data = "Hello Universe";
-  let list = ["delhi", "calcutta", "chennai"];
+  let list = ["", "", ""];
+  let list1 = [];
+  for (let i = 0; i < 100; i++) {
+    list1.push("");
+  }
   //
 
   return (
     <>
-      <h1>{data}</h1>
-      {/* {list.map((item) => item)}  version 1*/}
       {list.map((item) => (
-        <h1>Hello{item}</h1>
+        <div>
+          <h1>Hello world</h1>
+        </div>
+      ))}
+
+      {list1.map((item) => (
+        <div>
+          <h1>Hello Universe</h1>
+        </div>
       ))}
     </>
   );
 }
 
-// function MessegeDemo(Props) {
-//   return (
-//     <>
-//       <h1>Hello {(Props.name, Props.email)}</h1>
-//     </>
-//   );
-// }
 export default App;
