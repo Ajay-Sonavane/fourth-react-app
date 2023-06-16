@@ -10,11 +10,8 @@ function App() {
 }
 
 function MyTodo() {
-  //let todo = { task: "" };
-  //step:1:: Form :: multiple input Field
-  let [todo, setTodo] = useState({ task: "" });
+  let [todo, setTodo] = useState({ task: "", description: "" });
 
-  // step::3
   let handleChangeTaskAction = (e) => {
     // console.log(e.target);
     //e.targt===input object
@@ -22,9 +19,14 @@ function MyTodo() {
     setTodo(newTodo);
   };
 
-  // s4:: we will making API call
+  let handleChageDescription = (e) => {
+    // console.log(e.target);
+    let newTodo = { ...todo, description: e.target.value };
+    setTodo(newTodo);
+  };
+
   let addTodoAction = () => {
-    alert(todo.task);
+    alert(todo.task + "" + todo.description);
   };
 
   return (
@@ -33,10 +35,18 @@ function MyTodo() {
         className="form-control"
         type="text"
         placeholder="Enter todo"
-        // step:2
         value={todo.task}
         onChange={handleChangeTaskAction}
       />
+
+      <textarea
+        className="form-control"
+        cols="30"
+        placeholder="Enter description"
+        rows="3"
+        value={todo.description}
+        onChange={handleChageDescription}
+      ></textarea>
       <input type="button" value="Add Todo" onClick={addTodoAction} />
     </>
   );
