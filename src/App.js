@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function App() {
   return (
@@ -10,17 +10,16 @@ function App() {
 }
 
 function ListDemo() {
+  let inputRef = useRef();
+
   let [list, setList] = useState(["delhi"]);
 
   // C2: Acton Member Funcn
   let addItemAction = () => {
     //Restricted we cannot use this ..  this is not recommended
-    let inputElement = document.querySelector("#id1");
-    let inputValue = inputElement.value;
-
+    let inputValue = inputRef.current.value;
     let newList = [...list, inputValue];
-    inputElement.value = "";
-
+    inputRef.current.value = "";
     // DOM :: TRIGGER DOM
     setList(newList);
   };
@@ -28,7 +27,7 @@ function ListDemo() {
   return (
     <>
       {/** C3: Event Binding */}
-      <input type="text" id="id1" placeholder="Whatapp here..." />
+      <input type="text" ref={inputRef} placeholder="Whatapp here..." />
       <input type="button" value="Add Messege" onClick={addItemAction} />
 
       {/** C4: List */}
