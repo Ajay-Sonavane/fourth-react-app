@@ -3,17 +3,21 @@ function App() {
     <>
       <h1>Props demo </h1>
       {/* calling the messege */}
-      <MessegeDemo name="Ajay" email="Ajay@gmail.com" />
+      <ListDemo />
     </>
   );
 }
 
-function MessegeDemo({ name, email }) {
+function ListDemo() {
+  let data = "Hello Universe";
+  let list = ["delhi", "calcutta", "chennai"];
+  // for (let i = 0; i < 10; i++) {
+  //   list.push("hello Universe");
+  // }
   return (
     <>
-      <h1>
-        Hello {name} {email}
-      </h1>
+      <h1>{data}</h1>
+      {list.map((item) => item)}
     </>
   );
 }
