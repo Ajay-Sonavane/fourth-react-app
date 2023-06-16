@@ -14,6 +14,7 @@ function ListDemo() {
 
   // C2: Acton Member Funcn
   let addItemAction = () => {
+    //Restricted we cannot use this ..  this is not recommended
     let inputElement = document.querySelector("#id1");
     let inputValue = inputElement.value;
 
